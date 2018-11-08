@@ -6,6 +6,6 @@ import java.util.Map;
 
 public interface Extractor {
 
-    Map<String, Object> extract(Request request);
+    Map<String, Object> extract(Request request) throws Exception;
 
 }

@@ -1,4 +1,4 @@
-package io.github.espresso4j.sugar.internal;
+package io.github.espresso4j.sugar.extractors;
 
 import io.github.espresso4j.espresso.Request;
 import io.github.espresso4j.sugar.Extractor;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class QueryParamExtractor implements Extractor {
 
     @Override
-    public Map<String, Object> extract(Request request) {
+    public Map<String, Object> extract(Request request) throws Exception {
         String queryString = request.getQueryString();
 
         if (queryString == null || queryString.isEmpty()) {
