@@ -8,7 +8,9 @@ import io.github.espresso4j.sugar.extractors.JsonBodyExtractor;
 import io.github.espresso4j.sugar.extractors.QueryParamExtractor;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Sugar implements Espresso {
 
@@ -26,8 +28,16 @@ public class Sugar implements Espresso {
     }
 
     @Override
-    public Response call(Request request) {
-        // TODO: extract
+    public Response call(Request request) throws Exception {
+        Map<String, Object> params = new HashMap<>();
+        for (Extractor e: extractorList) {
+            Map<String, Object> extractions = e.extract(request);
+            if (extractions != null) {
+                params.putAll(extractions);
+            }
+        }
+
+        request.extension(Sugar.class, params);
         return inner.call(request);
     }
 
