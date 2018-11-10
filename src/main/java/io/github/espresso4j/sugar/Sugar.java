@@ -1,6 +1,7 @@
 package io.github.espresso4j.sugar;
 
 import io.github.espresso4j.espresso.Espresso;
+import io.github.espresso4j.espresso.ExtensionHolder;
 import io.github.espresso4j.espresso.Request;
 import io.github.espresso4j.espresso.Response;
 import io.github.espresso4j.sugar.extractors.FormExtractor;
@@ -39,6 +40,11 @@ public class Sugar implements Espresso {
 
         request.extension(Sugar.class, params);
         return inner.call(request);
+    }
+
+    @SuppressWarnings("unchecked")
+    public static Map<String, Object> extension(ExtensionHolder extensionHolder) {
+        return (Map<String, Object>) extensionHolder.extension(Sugar.class);
     }
 
 }
