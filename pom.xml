@@ -5,7 +5,7 @@
 
   <groupId>io.github.espresso4j</groupId>
   <artifactId>sugar</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1-SNAPSHOT</version>
 
   <name>sugar</name>
   <url>https://github.com/espresso4j/sugar</url>
@@ -29,7 +29,7 @@
     <url>https://github.com/espresso4j/sugar</url>
     <connection>scm:git:git@github.com:espresso4j/sugar.git</connection>
     <developerConnection>scm:git:git@github.com:espresso4j/sugar.git</developerConnection>
-    <tag>sugar-0.1.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
