@@ -1,3 +1,6 @@
 target
 *.iml
 .idea
+.meghanada
+.build
+.gradle
