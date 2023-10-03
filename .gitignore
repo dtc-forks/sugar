@@ -4,3 +4,7 @@ target
 .meghanada
 .build
 .gradle
+
+red4j-data/
+**/cp.txt
+**.java.orig
